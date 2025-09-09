@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1024" />
+<title>Coco Peat Pilot – Structured Financial & Compliance Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<!-- External Library for Charts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+:root{
+--primary-color:#556B2F;--secondary-color:#8FBC8F;--accent-color:#D2B48C;
+--text-color:#3D403A;--light-bg:#F5F5DC;--container-bg:rgba(255,255,255,.9);
+--border-color:rgba(0,0,0,.08);--shadow:0 8px 32px 0 rgba(135,135,135,.15);
+--font-heading:'Playfair Display',serif;--font-body:'Lato',sans-serif;
+--profit-color:#556B2F; --loss-color:#A0522D;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);line-height:1.8;color:var(--text-color);
+background:linear-gradient(170deg,#F0F2EB 0%,#E6E8E1 100%);
+-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.container{max-width:960px;margin:40px auto;background:var(--container-bg);
+border-radius:20px;box-shadow:var(--shadow);backdrop-filter:blur(10px);
+-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);
+padding:50px 60px}
+.content-section{padding:35px 0;border-bottom:1px solid var(--border-color)}
+.content-section:last-of-type{border-bottom:none}
+h1,h2,h3{font-family:var(--font-heading);color:var(--primary-color);font-weight:700}
+h1{font-size:3em;margin-bottom:10px;line-height:1.2}
+h2{font-size:2.2em;margin-bottom:25px;padding-bottom:15px;border-bottom:1px solid var(--secondary-color)}
+h3{font-size:1.4em;margin-bottom:15px}
+h4{font-size:1.1em;margin-bottom:15px;color: var(--primary-color);}
+p{margin-bottom:1.2em;font-weight:300;font-size:1.05em;text-align:justify}
+strong{font-weight:700}
+a{color:var(--primary-color);text-decoration:none}
+a:hover{text-decoration:underline}
+.header{text-align:center;padding-bottom:30px}
+.header .subtitle{font-size:1.1em;color:#555;font-weight:400}
+.grid{display:grid;gap:24px}
+.grid.two{grid-template-columns:1fr 1fr}
+.grid.three{grid-template-columns:repeat(3,1fr)}
+.card{background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.35);
+border-radius:16px;padding:22px;box-shadow:0 4px 15px rgba(0,0,0,.05)}
+.tag{display:inline-block;padding:.2em .6em;border-radius:999px;font-size:.8em;
+background:#F0F2EB;color:#556B2F;border:1px solid #C9D0C2;margin-right:.35rem}
+.muted{color:#666;font-size:.95em}
+.table{width:100%;border-collapse:separate;border-spacing:0;margin-top:10px;
+font-size:.95em;border:1px solid var(--border-color);border-radius:12px;overflow:hidden}
+.table th,.table td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--border-color)}
+.table th{background:#F0F2EB;color:var(--primary-color);font-weight:700;letter-spacing:.3px;font-size:.85em;text-transform:uppercase}
+.table tfoot td{font-weight:700;background:rgba(143,188,143,.15)}
+.small{font-size:.9em}
+.note{background:#fff9e6;border:1px solid #f3e2b8;border-radius:10px;padding:12px 14px;font-size:.95em}
+.inputs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
+.inputs label{font-size:.85em;color:#333}
+.inputs input{width:100%;padding:10px;border:1px solid #d6d6d6;border-radius:10px;background:white}
+.btn{margin-top:10px;display:inline-block;background:var(--primary-color);color:#fff;border:none;padding:10px 14px;border-radius:10px;cursor:pointer; font-weight: bold; font-size: 0.9em;}
+.btn-group{display:flex;flex-wrap: wrap; gap:10px;align-items:center;margin-top:15px}
+.btn.secondary{background-color:#8FBC8F}.btn.tertiary{background-color:#D2B48C;color:#3D403A}.btn.quaternary{background-color:#666; color:white;}
+.profit{color:var(--profit-color);font-weight:700;}.loss{color:var(--loss-color);font-weight:700;}
+.footer{text-align:center;margin-top:20px;padding-top:20px;font-size:.9em;color:#999}
+@media (max-width:768px){h1{font-size:2.2em}h2{font-size:1.6em}.container{margin:20px;padding:24px}.grid.two,.grid.three{grid-template-columns:1fr}.inputs{grid-template-columns:1fr}.btn-group{flex-direction:column;align-items:stretch}}
+</style>
+</head>
+<body>
+<main class="container">
+<header class="header">
+<h1>Coco Peat Pilot</h1>
+<div class="subtitle">Structured Financials, Marketability, Compliance & Risk – with live assumptions</div>
+<p class="muted" style="text-align:center;margin-top:8px">Scope: A-grade 5kg compressed blocks · Pilot volume ≈ one 20' container · Mix of wholesale + limited retail</p>
+</header>
+<!-- Executive Summary -->
+<section class="content-section">
+  <h2>Executive Summary</h2>
+  <div class="grid two">
+    <div class="card">
+      <h3>What we’re doing</h3>
+      <p>Export A-grade, first-quality coco peat (coir pith) 5kg blocks from Dindigul, Tamil Nadu to Los Angeles for sale to landscapers, nurseries, hydroponics/cannabis supply channels, and select online retail.</p>
+      <p class="note"><strong>Tariffs:</strong> Base MFN duty on coco peat is typically <em>zero</em> under the U.S. schedule. This model includes the <strong>additional 50% tariff on imports from India</strong> for risk assessment purposes, as announced in a fictional July 2025 scenario. This materially impacts landed cost and pricing strategy.</p>
+    </div>
+    <div class="card">
+      <h3>Benchmarks</h3>
+        <h4>Wholesale (per 5kg block, pallet qty)</h4>
+        <table class="table small">
+          <thead><tr><th>Supplier</th><th>Price (USD)</th><th>Notes</th></tr></thead>
+          <tbody>
+          <tr><td><a href="https://www.coiramerica.com/products-coco-peat-fiber-block.html" target="_blank">Coir America</a></td><td>~$8.75</td><td>$1750 / 200 blocks.</td></tr>
+          <tr><td><a href="https://growers-solution.com/products/gs-coconut-coir-block-5kg-pallet-of-220" target="_blank">Grower's Solution</a></td><td>~$9.98</td><td>$2195.95 / 220 blocks.</td>
+          </tr>
+          </tbody>
+        </table>
+       <h4 style="margin-top: 20px;">Retail (per 5kg / 10-11 lb block)</h4>
+      <table class="table small">
+        <thead><tr><th>Retailer</th><th>Observed price (USD)</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://www.walmart.com/ip/Plantonix-Coco-Coir-Brick-OMRI-Listed-for-Organic-Use-10-lbs/238464951" target="_blank">Walmart</a></td><td>$20–$30</td></tr>
+          <tr><td><a href="https://www.homedepot.com/p/Envelor-10-lbs-Organic-Coco-Block-Coir-Brick-Potting-Soil-EN-CGM-11/325789178" target="_blank">Home Depot</a></td><td>$20–$35</td></tr>
+          <tr><td><a href="https://www.amazon.com/s?k=5kg+coco+coir+block" target="_blank">Amazon</a></td><td>$22–$35 typical</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Assumptions & Calculator -->
+<section class="content-section">
+  <h2>Assumptions & Calculator</h2>
+  <div class="card">
+    <p class="muted">Values update automatically. Adjust any field, load a scenario, or toggle the currency for display.</p>
+    <div class="inputs" id="calc_inputs">
+      <!-- Input fields will be dynamically populated by JS -->
+    </div>
+    <div class="btn-group">
+        <button class="btn" id="default_case">Load Defaults</button>
+        <button class="btn secondary" id="best_case">Load Best-Case</button>
+        <button class="btn tertiary" id="worst_case">Load Worst-Case</button>
+        <button class="btn quaternary" id="toggle_currency">Toggle Currency ($/₹)</button>
+    </div>
+  </div>
+
+  <div class="grid two" style="margin-top:20px">
+    <div class="card">
+      <h3 id="cost_table_header">Landed Cost per 5kg Block</h3>
+      <table class="table" id="cost_table">
+        <thead><tr><th>Component</th><th id="cost_table_currency_header">Per 5kg block (US$)</th></tr></thead>
+        <tbody></tbody>
+        <tfoot><tr><td>Total landed (incl. tariff)</td><td id="total_landed">$—</td></tr></tfoot>
+      </table>
+    </div>
+    <div class="card">
+      <h3>Landed Cost Breakdown</h3>
+       <canvas id="cost_chart"></canvas>
+    </div>
+  </div>
+
+   <div class="grid two" style="margin-top:20px">
+     <div class="card">
+      <h3 id="margin_table_header">Margins (Hybrid mix)</h3>
+      <table class="table" id="margin_table">
+        <thead><tr><th>Channel</th><th id="margin_table_sell_header">Sell $/block</th><th id="margin_table_net_header">Net $/block</th><th>Gross margin</th></tr></thead>
+        <tbody>
+            <tr><td>Wholesale</td><td id="wh_sell_price">$—</td><td id="wh_net_profit">$—</td><td id="wh_gm">%</td></tr>
+            <tr><td>Retail (net)</td><td id="rt_sell_price">$—</td><td id="rt_net_profit">$—</td><td id="rt_gm">%</td></tr>
+        </tbody>
+        <tfoot><tr><td>Weighted (hybrid)</td><td id="w_sell">$—</td><td id="w_net">$—</td><td id="w_gm">—%</td></tr></tfoot>
+      </table>
+    </div>
+    <div class="card">
+      <h3 id="projection_table_header">Per-Container & Monthly Projection</h3>
+      <table class="table" id="container_table">
+        <thead><tr><th>Metric</th><th id="projection_table_currency_header">Value</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:20px">
+      <h3>Scenario Overrides</h3>
+      <p class="muted small">These inputs affect the monthly projection table above.</p>
+    <div class="inputs" id="override_inputs" style="grid-template-columns:repeat(4,1fr);margin-top:10px">
+       <!-- Override Input fields will be dynamically populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- Cost Structure -->
+<section class="content-section">
+  <h2>Cost Structure (India → U.S.)</h2>
+  <div class="grid two">
+    <div class="card">
+      <h3>India side (ex-works to Tuticorin)</h3>
+      <ul class="small">
+        <li><span class="tag">Ex-factory</span> A-grade first-quality target: ₹55–60/kg.</li>
+        <li><span class="tag">Inland haulage</span> Dindigul → V.O. Chidambaranar (Tuticorin) – input as ₹/container.</li>
+        <li><span class="tag">Port/handling</span> Stuffing, THC, docs – input as ₹/container.</li>
+        <li><span class="tag">Export charges</span> Coir pith typically has <em>no India export duty</em>; verify <a href="https://www.dgft.gov.in/CP/?opt=rodtep" target="_blank">RoDTEP eligibility</a> for refund/credit.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Ocean + U.S. side</h3>
+      <ul class="small">
+        <li><span class="tag">Ocean freight</span> Tuticorin → Los Angeles (20’). Use an index-anchored estimate in the calculator.</li>
+        <li><span class="tag">U.S. port/clearance</span> Terminal, broker, exam contingencies – enter as US$/container.</li>
+        <li><span class="tag">Tariffs</span> Base MFN duty is generally 0% for coir pith (<a href="https://rulingsearch.cbp.gov/ruling/N270127" target="_blank">HTS 1404.90.9090</a>), but model includes the <strong>+50% India-specific tariff</strong>.</li>
+        <li><span class="tag">Drayage & warehouse</span> LA/IE dray + storage (1–2 months typical for pilot).</li>
+        <li><span class="tag">Insurance</span> Marine cargo often quoted on CIF + 10% basis at ~0.5–2.0% of insured value.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Marketability & Competition -->
+<section class="content-section">
+  <h2>Marketability & Competition</h2>
+  <div class="grid two">
+    <div class="card">
+      <h3>Demand signals</h3>
+      <ul class="small">
+        <li>California’s horticulture, landscaping and controlled-environment agriculture markets are major consumers of coco coir.</li>
+        <li>The U.S. hydroponics market, a key channel, is projected to grow significantly from <a href="https://www.grandviewresearch.com/industry-analysis/north-america-hydroponics-market" target="_blank">~$3B in 2023</a>, driving demand for substrates.</li>
+        <li>Cannabis cultivation in California remains a competitive but large market for high-quality growing media like coco coir.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Competitors & positioning</h3>
+      <ul class="small">
+        <li><span class="tag">Origins</span> India & Sri Lanka dominate supply of coco peat blocks.</li>
+        <li><span class="tag">Differentiate</span> Focus on A-grade, low-EC (Electrical Conductivity) material with reliable expansion and consistent particle size.</li>
+        <li><span class="tag">Service</span> Leverage Los Angeles / Inland Empire warehousing for rapid order fulfillment and offer competitive B2B pallet pricing.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Compliance & Approvals -->
+<section class="content-section">
+  <h2>Compliance & Approvals</h2>
+  <div class="grid two">
+    <div class="card">
+      <h3>India side setup</h3>
+      <ul class="small">
+        <li>Establish entity + bank a/c; <a href="https://www.dgft.gov.in/CP/?opt=iec-profile-management" target="_blank">obtain IEC via DGFT</a> (PAN-based).</li>
+        <li>Register with <strong><a href="https://coirboard.gov.in/" target="_blank">Coir Board</a></strong> and obtain RCMC (Registration-Cum-Membership Certificate).</li>
+      </ul>
+      <h4>Incentives</h4>
+      <ul class="small">
+        <li>Check current <strong><a href="https://www.dgft.gov.in/CP/?opt=rodtep" target="_blank">RoDTEP</a></strong> schedules for coir pith; rates change periodically.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>U.S. import (USDA/APHIS & CBP)</h3>
+      <ul class="small">
+        <li><span class="tag">USDA/APHIS</span> Importers must meet <a href="https://www.aphis.usda.gov/aphis/ourfocus/planthealth/import-information/acir" target="_blank">ACIR requirements</a> for cleanliness and freedom from pests/soil. A phytosanitary certificate is required.</li>
+        <li><span class="tag">CBP/HTS</span> <a href="https://rulingsearch.cbp.gov/ruling/N270127" target="_blank">CBP rulings</a> classify coir pith as duty-free, but the model includes the <strong>+50% tariff</strong> for risk planning.</li>
+        <li><span class="tag">Packaging</span> Ensure any wood packaging (e.g., pallets) is <a href="https://www.ippc.int/en/core-activities/standards-setting/ispm-15/" target="_blank">ISPM-15</a> compliant (heat-treated and stamped).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Insurance & Risk -->
+<section class="content-section">
+    <h2>Insurance & Risk Management</h2>
+    <div class="grid two">
+        <div class="card">
+            <h3>Coverage to carry</h3>
+            <ul class="small">
+                <li><strong>Marine cargo</strong> on CIF(+10%) valuation; typical premiums are ~<strong>0.5%–2.0%</strong> of insured value.</li>
+                <li><strong>Warehouse</strong> stock coverage and general commercial liability insurance are essential once stateside.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Key risks & mitigations</h3>
+            <ul class="small">
+                <li><span class="tag">Tariff shock</span> The 50% tariff scenario highlights the importance of having flexible pricing and quote-validity clauses.</li>
+                <li><span class="tag">Inspection/holds</span> Ensure clean, pest-free material and proper phytosanitary certificates; build buffer time and funds for potential USDA exams.</li>
+                <li><span class="tag">Rate volatility</span> Book ocean freight space early; compare FAK vs named-account rates; consider Inland Empire warehouses for potentially lower storage costs.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<footer class="footer">
+  <p>Prepared by <strong>Vijay Malaichamy Sathappan</strong> · Amara Coconuts · Natham, Tamil Nadu</p>
+</footer>
+
+</main>
+<script>
+// --- GLOBAL VARS ---
+let costChart;
+let currentCurrency = 'USD'; // 'USD' or 'INR'
+
+// --- DEFAULT DATA ---
+const defaultInputs = {
+    inr_per_kg: { label: "Ex-factory cost (₹/kg)", value: 58, step: 1 },
+    fx: { label: "FX (₹ per US$)", value: 87.95, step: 0.5 },
+    kg_per_block: { label: "Kg per block", value: 5, step: 0.1 },
+    blocks_per_cntr: { label: "Blocks per 20' container", value: 4000, step: 50 },
+    inland_inr_cntr: { label: "Inland (factory→Tuticorin) per container (₹)", value: 75000, step: 1000 },
+    port_inr_cntr: { label: "Port/handling India per container (₹)", value: 55000, step: 1000 },
+    ocean_usd: { label: "Ocean freight Tuticorin→LA (US$ per 20')", value: 3500, step: 100 },
+    us_port_usd: { label: "US port/customs/clearance per container (US$)", value: 1100, step: 50 },
+    dray_usd: { label: "Drayage LA port→warehouse (US$)", value: 650, step: 25 },
+    wh_usd_mo: { label: "Warehouse cost per month (US$)", value: 2200, step: 100 },
+    months_hold: { label: "Months inventory held", value: 1, step: 0.5 },
+    ins_pct: { label: "Insurance (% of CIF)", value: 1, step: 0.1 },
+    other_us_usd: { label: "Other US fees per container (US$)", value: 300, step: 25 },
+    tariff_pct: { label: "Additional India→US tariff (%)", value: 50, step: 1 },
+    wh_price: { label: "Wholesale sell price per 5kg (US$)", value: 11.5, step: 0.25 },
+    rt_price: { label: "Retail sell price per 5kg (US$)", value: 20.0, step: 0.5 },
+    retail_share: { label: "Hybrid: % blocks to retail", value: 25, step: 5 },
+    rt_fee_pct: { label: "Retail channel fees (% of retail price)", value: 15, step: 1 }
+};
+
+const defaultOverrides = {
+    cntrs_per_mo: { label: "Containers per month", value: 1, step: 1 },
+    fixed_us_overhead: { label: "Monthly fixed US overhead (US$)", value: 800, step: 50 },
+    mkt_per_cntr: { label: "Sales/marketing per container (US$)", value: 250, step: 25 },
+    wc_cost_pct: { label: "Working-capital cost (%/mo on inventory value)", value: 1, step: 0.25 }
+};
+
+// --- UTILITY FUNCTIONS ---
+function formatCurrency(usdValue) {
+    const fxRate = val('fx');
+    if (currentCurrency === 'INR') {
+        const inrValue = usdValue * fxRate;
+        return '₹' + inrValue.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+    // Default to USD
+    return '$' + usdValue.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function pct(x){return (Math.round(x*10)/10).toFixed(1)+'%'}
+function val(id){return parseFloat(document.getElementById(id).value||0)}
+function setVal(id, value){document.getElementById(id).value=value}
+function colorize(el, val) {
+    el.classList.remove('profit', 'loss');
+    if (val > 0) el.classList.add('profit');
+    else if (val < 0) el.classList.add('loss');
+}
+
+// --- CORE CALCULATION LOGIC ---
+function recalc(){
+    // This function performs all calculations in USD.
+    // The formatCurrency() utility is used only for final display.
+    const values = {};
+    [...Object.keys(defaultInputs), ...Object.keys(defaultOverrides)].forEach(id => {
+        const inputEl = document.getElementById(id);
+        if (inputEl) values[id] = parseFloat(inputEl.value || 0);
+    });
+
+    const {
+        inr_per_kg, fx, kg_per_block, blocks_per_cntr, inland_inr_cntr, port_inr_cntr,
+        ocean_usd, us_port_usd, dray_usd, wh_usd_mo, months_hold, ins_pct, other_us_usd,
+        tariff_pct, wh_price, rt_price, retail_share, rt_fee_pct,
+        cntrs_per_mo, fixed_us_overhead, mkt_per_cntr, wc_cost_pct
+    } = values;
+
+    const retailShare = retail_share / 100;
+
+    // Cost per block calculations (all in USD)
+    const ex_factory_usd = (inr_per_kg * kg_per_block) / fx;
+    const india_logistics_usd = ((inland_inr_cntr + port_inr_cntr) / fx) / blocks_per_cntr;
+    const ocean_freight_usd = ocean_usd / blocks_per_cntr;
+    const us_landside_usd = (us_port_usd + dray_usd + other_us_usd) / blocks_per_cntr;
+    const holding_usd = (wh_usd_mo * months_hold) / blocks_per_cntr;
+
+    const cif = ex_factory_usd + india_logistics_usd + ocean_freight_usd;
+    const insurance_usd = (cif * 1.10) * (ins_pct / 100);
+    const customs_value = cif + insurance_usd;
+    const tariff_usd = customs_value * (tariff_pct / 100);
+    
+    const landed = customs_value + tariff_usd + us_landside_usd + holding_usd;
+
+    // Margin per block calculations (all in USD)
+    const wholesale_net = wh_price - landed;
+    const retail_net_revenue = rt_price * (1 - (rt_fee_pct / 100));
+    const retail_net_profit = retail_net_revenue - landed;
+    const weighted_net = wholesale_net * (1 - retailShare) + retail_net_profit * retailShare;
+    // Note: weighted_sell uses gross retail price for a conservative blended margin.
+    const weighted_sell = wh_price * (1 - retailShare) + rt_price * retailShare;
+    const weighted_gm = (weighted_sell > 0 ? (weighted_net / weighted_sell) * 100 : 0);
+    const wholesale_gm = wh_price > 0 ? (wholesale_net / wh_price) * 100 : 0;
+    const retail_gm = retail_net_revenue > 0 ? (retail_net_profit / retail_net_revenue) * 100 : 0;
+    
+    // --- UPDATE UI ---
+    
+    // Update table headers based on currency
+    const currencySymbol = currentCurrency === 'USD' ? '$' : '₹';
+    document.getElementById('cost_table_header').textContent = `Landed Cost per 5kg Block`;
+    document.getElementById('cost_table_currency_header').textContent = `Per 5kg block (${currencySymbol})`;
+    document.getElementById('margin_table_header').textContent = `Margins (Hybrid mix)`;
+    document.getElementById('margin_table_sell_header').textContent = `Sell ${currencySymbol}/block`;
+    document.getElementById('margin_table_net_header').textContent = `Net ${currencySymbol}/block`;
+    document.getElementById('projection_table_header').textContent = `Per-Container & Monthly Projection`;
+    document.getElementById('projection_table_currency_header').textContent = `Value (${currencySymbol})`;
+
+    // Landed cost table
+    const costRowsData = [
+        {label: 'Ex-factory & India Side', value: ex_factory_usd + india_logistics_usd},
+        {label: 'Ocean Freight & Insurance', value: ocean_freight_usd + insurance_usd},
+        {label: 'Tariff (Hypothetical)', value: tariff_usd},
+        {label: 'U.S. Port & Drayage', value: us_landside_usd},
+        {label: 'Inventory Holding', value: holding_usd}
+    ];
+    document.querySelector('#cost_table tbody').innerHTML = costRowsData.map(r => `<tr><td>${r.label}</td><td>${formatCurrency(r.value)}</td></tr>`).join('');
+    document.getElementById('total_landed').textContent = formatCurrency(landed);
+
+    // Margin table
+    document.getElementById('wh_sell_price').textContent = formatCurrency(wh_price);
+    document.getElementById('rt_sell_price').textContent = formatCurrency(retail_net_revenue);
+    document.getElementById('wh_net_profit').textContent = formatCurrency(wholesale_net);
+    document.getElementById('rt_net_profit').textContent = formatCurrency(retail_net_profit);
+    document.getElementById('wh_gm').textContent = pct(wholesale_gm);
+    document.getElementById('rt_gm').textContent = pct(retail_gm);
+    document.getElementById('w_sell').textContent = formatCurrency(weighted_sell);
+    document.getElementById('w_net').textContent = formatCurrency(weighted_net);
+    document.getElementById('w_gm').textContent = pct(weighted_gm);
+    colorize(document.getElementById('wh_net_profit'), wholesale_net);
+    colorize(document.getElementById('rt_net_profit'), retail_net_profit);
+    colorize(document.getElementById('w_net'), weighted_net);
+
+    // Projection table
+    const container_gross_profit = weighted_net * blocks_per_cntr;
+    const inv_value = landed * blocks_per_cntr;
+    // Note: wc_cost is a simplified model. In steady-state, capital is tied up for multiple containers.
+    const wc_cost = inv_value * (wc_cost_pct / 100) * months_hold;
+    const monthly_profit = (container_gross_profit * cntrs_per_mo) - fixed_us_overhead - (mkt_per_cntr * cntrs_per_mo) - wc_cost;
+    
+    document.querySelector('#container_table tbody').innerHTML = [
+        ['Container Gross Revenue', weighted_sell * blocks_per_cntr],
+        ['Container Gross Profit', container_gross_profit],
+        ['Inventory Carrying Cost', wc_cost],
+        ['Monthly Net Profit', monthly_profit]
+    ].map(r => `<tr><td>${r[0]}</td><td id="${r[0].replace(/\s+/g, '')}">${formatCurrency(r[1])}</td></tr>`).join('');
+    colorize(document.getElementById('MonthlyNetProfit'), monthly_profit);
+
+    // Update Chart (always in USD for consistent visual comparison)
+    const ctx = document.getElementById('cost_chart').getContext('2d');
+    if (costChart) costChart.destroy();
+    costChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: costRowsData.map(r => r.label),
+            datasets: [{
+                data: costRowsData.map(r => r.value),
+                backgroundColor: ['#556B2F', '#8FBC8F', '#A0522D', '#D2B48C', '#F5DEB3'],
+                borderColor: 'rgba(255,255,255,.9)',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            animation: { duration: 0 },
+            plugins: {
+                legend: { position: 'bottom', labels:{font:{size:10}} },
+                tooltip: {
+                    callbacks: {
+                        label: (context) => {
+                            let total = context.chart.getDatasetMeta(0).total;
+                            let percentage = ((context.raw / total) * 100).toFixed(1);
+                            return `${context.label}: $${(context.raw).toFixed(2)} (${percentage}%)`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+// --- SCENARIO & EVENT HANDLERS ---
+function loadDefaults() {
+    Object.keys(defaultInputs).forEach(id => setVal(id, defaultInputs[id].value));
+    Object.keys(defaultOverrides).forEach(id => setVal(id, defaultOverrides[id].value));
+    recalc();
+}
+
+function loadBestCase() {
+    loadDefaults();
+    setVal('inr_per_kg', 55); setVal('fx', 90); setVal('ocean_usd', 3000);
+    setVal('months_hold', 0.5); setVal('wh_price', 13.0); setVal('rt_price', 25.0);
+    setVal('retail_share', 40); setVal('tariff_pct', 0);
+    recalc();
+}
+
+function loadWorstCase() {
+    loadDefaults();
+    setVal('inr_per_kg', 62); setVal('fx', 85); setVal('ocean_usd', 4500);
+    setVal('us_port_usd', 1400); setVal('dray_usd', 850); setVal('months_hold', 2.5);
+    setVal('wh_price', 9.50); setVal('rt_price', 19.00); setVal('retail_share', 10);
+    setVal('tariff_pct', 50);
+    recalc();
+}
+
+function toggleCurrency() {
+    currentCurrency = (currentCurrency === 'USD') ? 'INR' : 'USD';
+    recalc(); // Re-render all values with the new currency
+}
+
+
+// --- INITIALIZATION ---
+document.addEventListener('DOMContentLoaded', () => {
+    const inputsContainer = document.getElementById('calc_inputs');
+    const overridesContainer = document.getElementById('override_inputs');
+    
+    Object.entries(defaultInputs).forEach(([id, item]) => {
+        inputsContainer.innerHTML += `<div><label for="${id}">${item.label}</label><input id="${id}" type="number" value="${item.value}" step="${item.step}"></div>`;
+    });
+    
+    Object.entries(defaultOverrides).forEach(([id, item]) => {
+        overridesContainer.innerHTML += `<div><label for="${id}">${item.label}</label><input id="${id}" type="number" value="${item.value}" step="${item.step}"></div>`;
+    });
+    
+    document.getElementById('default_case').addEventListener('click', loadDefaults);
+    document.getElementById('best_case').addEventListener('click', loadBestCase);
+    document.getElementById('worst_case').addEventListener('click', loadWorstCase);
+    document.getElementById('toggle_currency').addEventListener('click', toggleCurrency);
+
+    document.querySelectorAll('#calc_inputs input, #override_inputs input').forEach(input => {
+        input.addEventListener('input', recalc);
+    });
+
+    loadDefaults(); // Initial calculation on page load
+});
+
+</script>
+</body>
+</html>
